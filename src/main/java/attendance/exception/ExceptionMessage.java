@@ -1,6 +1,7 @@
 package attendance.exception;
 
 public enum ExceptionMessage {
+    FILE_NOT_FOUNT("[ERROR] 파일을 찾을 수 없습니다."),
     INVALID_FORMAT("[ERROR] 잘못된 형식을 입력하였습니다."),
     NOT_FOUNT_NAME("[ERROR] 등록되지 않은 닉네임입니다."),
     NON_WEEKDAY("[ERROR] %d월 %d일 %s은 등교일이 아닙니다.\n"),
