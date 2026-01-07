@@ -2,7 +2,7 @@ package attendance.dto;
 
 import attendance.domain.AttendanceStatus;
 
-public class AttendanceCountDTO{
+public class AttendanceCountDTO {
     private int attendance_count;
     private int late_count;
     private int absence_count;
@@ -13,13 +13,27 @@ public class AttendanceCountDTO{
         absence_count = 0;
     }
 
-    public void plus(AttendanceStatus attendanceStatus){
-        if(attendanceStatus == AttendanceStatus.ATTENDANCE)
+    public void plus(AttendanceStatus attendanceStatus) {
+        if (attendanceStatus == AttendanceStatus.ATTENDANCE) {
             attendance_count++;
-        if(attendanceStatus == AttendanceStatus.ABSENCE)
+        }
+        if (attendanceStatus == AttendanceStatus.ABSENCE) {
             absence_count++;
-        if(attendanceStatus == AttendanceStatus.LATE)
+        }
+        if (attendanceStatus == AttendanceStatus.LATE) {
             late_count++;
+        }
     }
 
+    public int getAttendance_count() {
+        return attendance_count;
+    }
+
+    public int getLate_count() {
+        return late_count;
+    }
+
+    public int getAbsence_count() {
+        return absence_count;
+    }
 }

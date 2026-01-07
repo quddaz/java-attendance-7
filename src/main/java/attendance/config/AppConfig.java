@@ -3,7 +3,6 @@ package attendance.config;
 import attendance.AttendanceStarter;
 import attendance.util.DateTimesGenerator;
 import attendance.util.LocalDateTimesGenerator;
-import java.time.LocalDateTime;
 
 public class AppConfig {
     private final DateTimesGenerator dateTimesGenerator;
@@ -15,7 +14,7 @@ public class AppConfig {
         this.attendanceStarter = new AttendanceStarter(dateTimesGenerator);
     }
 
-    public AttendanceStarter attendanceStarter(){
+    public AttendanceStarter attendanceStarter() {
         return attendanceStarter;
     }
 }

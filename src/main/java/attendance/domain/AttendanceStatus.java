@@ -17,13 +17,14 @@ public enum AttendanceStatus {
         this.name = name;
     }
 
-    public String getName(){
-        return name;
-    }
-    public static AttendanceStatus from(LocalTime start, LocalTime now){
+    public static AttendanceStatus from(LocalTime start, LocalTime now) {
         long result = ChronoUnit.MINUTES.between(start, now);
         return Arrays.stream(values())
                 .filter(a -> a.rate >= result)
                 .findFirst().orElse(ABSENCE);
+    }
+
+    public String getName() {
+        return name;
     }
 }

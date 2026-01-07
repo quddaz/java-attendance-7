@@ -2,6 +2,7 @@ package attendance.domain;
 
 import attendance.view.OutputConfig;
 import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
@@ -20,25 +21,25 @@ public class Time {
         this.attendanceStatus = initAttendanceStatus();
     }
 
-    public LocalTime getLocalTime(){
-        return LocalTime.of(hour,minute);
+    public LocalTime getLocalTime() {
+        return LocalTime.of(hour, minute);
     }
 
+    public AttendanceStatus getAttendanceStatus() {
+        return attendanceStatus;
+    }
+
+    private AttendanceStatus initAttendanceStatus() {
+        return AttendanceStatus.from(dayOfWeek.getStart(), getLocalTime());
+    }
     public KrDayOfWeek getDayOfWeek(){
         return dayOfWeek;
     }
-
-    public AttendanceStatus getAttendanceStatus(){
-        return attendanceStatus;
-    }
-    private AttendanceStatus initAttendanceStatus(){
-        return AttendanceStatus.from(dayOfWeek.getStart(), getLocalTime());
-    }
-
-    public String getPrint(LocalDateTime localDateTime, int day){
+    public String getPrint(LocalDate localDate) {
         return String.format(OutputConfig.ATTENDANCE_MESSAGE.get()
-                , localDateTime.getMonth()
-                , day
+                , localDate.getMonthValue()
+                , localDate.getDayOfMonth()
+                , dayOfWeek.name()
                 , hour
                 , minute
                 , attendanceStatus.getName());
