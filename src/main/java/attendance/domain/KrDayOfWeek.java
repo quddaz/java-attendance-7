@@ -38,6 +38,9 @@ public enum KrDayOfWeek {
         return isAttendance;
     }
 
+    public LocalTime getStart(){
+        return start;
+    }
     public boolean isCheckTime(LocalTime localTime){
         return !localTime.isAfter(start) && !localTime.isBefore(end);
     }

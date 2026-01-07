@@ -5,5 +5,5 @@ import java.util.List;
 import java.util.Map;
 
 public class AttendanceInfo {
-    private final Map<String, >
+    private final Map<String, List<Day>> info;
 }
