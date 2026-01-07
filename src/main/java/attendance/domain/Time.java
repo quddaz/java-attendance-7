@@ -3,7 +3,6 @@ package attendance.domain;
 import attendance.view.OutputConfig;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 
@@ -31,9 +30,6 @@ public class Time {
 
     private AttendanceStatus initAttendanceStatus() {
         return AttendanceStatus.from(dayOfWeek.getStart(), getLocalTime());
-    }
-    public KrDayOfWeek getDayOfWeek(){
-        return dayOfWeek;
     }
     public String getPrint(LocalDate localDate) {
         return String.format(OutputConfig.ATTENDANCE_MESSAGE.get()

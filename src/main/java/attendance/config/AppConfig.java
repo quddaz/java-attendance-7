@@ -1,8 +1,8 @@
 package attendance.config;
 
 import attendance.AttendanceStarter;
-import attendance.util.DateTimesGenerator;
-import attendance.util.LocalDateTimesGenerator;
+import attendance.generator.DateTimesGenerator;
+import attendance.generator.LocalDateTimesGenerator;
 
 public class AppConfig {
     private final DateTimesGenerator dateTimesGenerator;

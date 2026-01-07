@@ -1,4 +1,4 @@
-package attendance.util;
+package attendance.generator;
 
 import java.time.LocalDateTime;
 

@@ -10,7 +10,7 @@ import attendance.exception.ExceptionMessage;
 import attendance.parser.IntParser;
 import attendance.parser.LocalDateTimeParser;
 import attendance.parser.MenuInputParser;
-import attendance.util.DateTimesGenerator;
+import attendance.generator.DateTimesGenerator;
 import attendance.util.FileInitializer;
 import attendance.view.InputView;
 import attendance.view.OutputView;
@@ -40,7 +40,7 @@ public class AttendanceStarter {
             mainProcess(attendanceInfo);
         } catch (CustomException e) {
             OutputView.printExceptionMessage(e.getMessage());
-            throw new CustomException(e.getMessage());
+            return;
         }
     }
 

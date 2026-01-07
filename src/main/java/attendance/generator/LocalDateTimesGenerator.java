@@ -1,5 +1,6 @@
-package attendance.util;
+package attendance.generator;
 
+import attendance.generator.DateTimesGenerator;
 import camp.nextstep.edu.missionutils.DateTimes;
 import java.time.LocalDateTime;
 
