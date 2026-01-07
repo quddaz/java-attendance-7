@@ -1,21 +1,25 @@
 package attendance.domain;
 
 import java.time.LocalTime;
-import java.time.chrono.ChronoLocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 
 public enum AttendanceStatus {
-    ATTENDANCE(5),
-    LATE(30),
-    ABSENCE(Integer.MAX_VALUE);
+    ATTENDANCE(5, "출석"),
+    LATE(30, "지각"),
+    ABSENCE(Integer.MAX_VALUE, "결석");
 
     private final int rate;
+    private final String name;
 
-    AttendanceStatus(int rate) {
+    AttendanceStatus(int rate, String name) {
         this.rate = rate;
+        this.name = name;
     }
 
+    public String getName(){
+        return name;
+    }
     public static AttendanceStatus from(LocalTime start, LocalTime now){
         long result = ChronoUnit.MINUTES.between(start, now);
         return Arrays.stream(values())

@@ -10,7 +10,7 @@ public enum OutputConfig {
     ATTENDANCE_CHANGE_MESSAGE("출석을 수정하려는 크루의 닉네임을 입력해 주세요."),
     DATE_INPUT_CHANGE_MESSAGE("수정하려는 날짜(일)를 입력해 주세요."),
     TIME_INPUT_CHANGE_MESSAGE("언제로 변경하겠습니까?"),
-    ATTENDANCE_CHANGE_SUCCESS_MESSAGE("%d월 %d일 %s %s:%s (%s) -> %s:%s (%s) 수정 완료!\n"),
+    ATTENDANCE_CHANGE_SUCCESS_MESSAGE("%s -> %s:%s (%s) 수정 완료!\n"),
     SELECT_ATTENDANCE_INFO_MESSAGE("이번 달 %s의 출석 기록입니다.\n"),
     ATTENDANCE_INFO_MESSAGE("출석: %d회\n" + "지각: %d회\n" + "결석: %d회\n"),
     USER_ATTENDANCE_STATUS_MESSAGE("%s 대상자입니다.\n");
